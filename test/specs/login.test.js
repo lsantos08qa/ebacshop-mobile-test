@@ -1,4 +1,4 @@
-import { expect, driver } from 'wdio/globlas'
+import { expect, driver } from 'wdio/globals'
 import homePage from '../pageobjects/home.page.js'
 import loginPage from '../pageobjects/login.page.js'
 import profilePage from '../pageobjects/profile.page.js'

@@ -1,19 +1,30 @@
 export const config = {
-    runner: 'local',
-    port: 4723,
+    user: 'oauth-ls.corporativo18-b3013',
+    key: 'dccdb8f4-3d8d-4a75-bd66-7ef239c9d046',
+    hostname: 'ondemand.us-west-1.saucelabs.com',
+    port: 443,
+    baseUrl: 'wd/hub',
+    
     specs: [
         './test/specs/**/*.js'
     ],
     maxInstances: 1, 
-    capabilities: [{
-        platformName: 'Android',
-        'appium:deviceName': 'ebac-qe',
-        'appium:platformVersion': '14.0',
-        'appium:automationName': 'UiAutomator2',
-        'appium:app': `${process.cwd()}/app/ebac.shop.apks`,
-        'appium:appWaitActivity': '.MainActivity',
-        'appium:disableIdlocatorAutocompletion': true
-    }],
+    capabilities: [
+        {
+          platformName: 'Android',
+          'appium:app': 'storage:filename=ebacshop.aab',  
+          'appium:deviceName': 'Samsung Galaxy S21',  
+          'appium:platformVersion': '12.0',
+          'appium:automationName': 'UiAutomator2',
+          'appium:disableLocatorAutocompletion': true,
+          'sauce:options': {
+            appiumVersion: 'latest',  
+            build: 'appium-build-teste-ebacshop',
+            name: 'Ebac Shop Teste',
+            deviceOrientation: 'PORTRAIT',
+          },
+        }
+      ],
     logLevel: 'info',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
