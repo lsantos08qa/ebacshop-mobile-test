@@ -13,8 +13,8 @@ export const config = {
         {
           platformName: 'Android',
           'appium:app': 'storage:filename=ebacshop.aab',  
-          'appium:deviceName': 'Samsung Galaxy S21',  
-          'appium:platformVersion': '12.0',
+          'appium:deviceName': 'Samsung*',  
+          'appium:platformVersion': '10.0',
           'appium:automationName': 'UiAutomator2',
           'appium:disableLocatorAutocompletion': true,
           'sauce:options': {
@@ -30,7 +30,7 @@ export const config = {
     connectionRetryTimeout: 120000,
     framework: 'mocha',
     reporters: [
-        'spec', // Corrigido de 'spesc'
+        'spec', 
         ['allure', {
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: true,

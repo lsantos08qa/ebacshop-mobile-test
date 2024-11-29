@@ -16,6 +16,7 @@
     "test": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
+    "@wdio/globals": "^9.4.1",
     "@wdio/sauce-service": "^9.4.1",
     "allure-commandline": "^2.32.0",
     "webdriverio": "^9.4.1"

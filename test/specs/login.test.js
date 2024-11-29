@@ -1,4 +1,6 @@
-import { expect, driver } from 'wdio/globals'
+//import { expect, driver } from 'wdio/globals'
+import { expect, driver } from 'webdriverio'
+
 import homePage from '../pageobjects/home.page.js'
 import loginPage from '../pageobjects/login.page.js'
 import profilePage from '../pageobjects/profile.page.js'

@@ -12,8 +12,8 @@ describe('Fluxo de cadastro de usuário', () => {
         await CadastroPage.preencherCadastro(firstName, lastName, phone, email, password);
         await CadastroPage.clicarCriarConta();
 
-        const successMessage = await $('~successMessage'); // Ajustar seletor real
-        await expect(successMessage).toBeDisplayed();
-        await expect(successMessage).toHaveTextContaining('Cadastro realizado com sucesso');
+        const successMessage = await $('~successMessage')
+        await expect(successMessage).toBeDisplayed()
+        await expect(successMessage).toHaveTextContaining('Cadastro realizado com sucesso')
     });
 });

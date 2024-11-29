@@ -1,4 +1,6 @@
-import { $ } from '@wdio/globals'
+//import { $ } from '@wdio/globals'
+import { $ } from 'webdriverio'
+
 
 class ProfilePage {
     async profileName (name){

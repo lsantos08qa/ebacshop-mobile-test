@@ -1,5 +1,5 @@
-import { $ } from '@wdio/globals'
-
+//import { $ } from '@wdio/globals'
+import { $ } from 'webdriverio'
 class LoginPage {
 
     get email (){
@@ -11,7 +11,6 @@ class LoginPage {
     get btnLogin(){
         return $('~Login') //$('id:bntLogin')
     }
-
     async login(email, password){
         await this.email.setValue(email)
         await this.password.setValue(password)
