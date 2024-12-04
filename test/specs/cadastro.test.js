@@ -17,3 +17,4 @@ describe('Fluxo de cadastro de usuário', () => {
         await expect(successMessage).toHaveTextContaining('Cadastro realizado com sucesso')
     });
 });
+
