@@ -1,39 +1,47 @@
-//import { $ } from '@wdio/globals'
-import { $ } from 'webdriverio'
+import { $ } from '@wdio/globals'
 
 class CadastroPage {
-    get inputFirstName() {
-        return $('~firstName')
-    }
-    get inputLastName() {
-        return $('~lastName')
-    }
-    get inputPhoneNumber() {
-        return $('android=new UiSelector().text("Phone Number")')
-    }
-    get inputEmail() {
-        return $('~email')
-    }
-    get inputPassword() {
-        return $('~password')
-    }
-    get inputRePassword() {
-        return $('~repassword')
-    }
-    get btnCreate() {
-        return $('~create')
-    }
-    async preencherCadastro(firstName, lastName, phone, email, password) {
-        await this.inputFirstName.setValue(firstName);
-        await this.inputLastName.setValue(lastName);
-        await this.inputPhoneNumber.setValue(phone);
-        await this.inputEmail.setValue(email);
-        await this.inputPassword.setValue(password);
-        await this.inputRePassword.setValue(password);
-    }
-    async clicarCriarConta() {
-        await this.btnCreate.click();
-    }
+    get btnSign () {
+        return $('android=new UiSelector().text("Sign up")')
+     }
+ get firstName () {
+    return $('id:firstName')
+ }
+
+ get lastName () {
+    return $('id:lastName')
+ }
+
+ get phone () {
+    return $('android=new UiSelector().resourceId("phone")')
+ }
+
+ get emailAdress () {
+    return $('android=new UiSelector().resourceId("email")')
+ }
+
+ get password () {
+    return $('android=new UiSelector().resourceId("password")')
+ }
+
+ get rePassword () {
+    return $('id:repassword')
+ }
+
+ get btnCreate () {
+    return $('android=new UiSelector().resourceId("create")')
+ }
+
+ async cadastro(firstName, lastName, phone, emailAdress, password, rePassword) {
+    await this.btnSign.click()
+    await this.firstName.setValue(firstName)
+    await this.lastName.setValue(lastName)
+    await this.phone.setValue(phone)
+    await this.emailAdress.setValue(emailAdress)
+    await this.password.setValue(password)
+    await this.rePassword.setValue(rePassword)
+    await this.btnCreate.click()
+ }
 }
 
-module.exports = new CadastroPage();
+export default new CadastroPage();

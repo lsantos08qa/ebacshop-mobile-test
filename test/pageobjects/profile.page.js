@@ -1,11 +1,9 @@
-//import { $ } from '@wdio/globals'
-import { $ } from 'webdriverio'
+import { $ } from '@wdio/globals'
 
-
-class ProfilePage {
-    async profileName (name){
-        return await $(`//android.widget.TextView[@text="${name}"]`)
-    }
-
+class profilePage {
+  async profileName (){
+    return await $('//android.widget.TextView[@text="${name}"]')
+  }
 }
-export default new ProfilePage ();
+
+export default new profilePage();

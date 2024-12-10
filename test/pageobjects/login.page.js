@@ -1,21 +1,21 @@
-//import { $ } from '@wdio/globals'
-import { $ } from 'webdriverio'
-class LoginPage {
+import { $ } from '@wdio/globals'
 
-    get email (){
-        return $('id:email')
-    }
-    get password (){
-        return $('android=new UiSelector().text("Password)')   //('id:password') - outra forma de usar o seletor
-    }
-    get btnLogin(){
-        return $('~Login') //$('id:bntLogin')
-    }
-    async login(email, password){
-        await this.email.setValue(email)
-        await this.password.setValue(password)
-        await this.btnLogin.click()
-    }
+class LoginPage {
+ get email () {
+    return $('id:email') 
+ }
+ get password () {
+    return $('android=new UiSelector().text("Password")') 
+ }
+ get btnLogin () {
+    return $('~Login') 
+ }
+
+ async login(email, password) {
+    await this.email.setValue(email)
+    await this.password.setValue(password)
+    await this.btnLogin.click()
+ }
 }
 
 export default new LoginPage();
